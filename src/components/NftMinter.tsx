@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FC, useCallback, useState } from "react";
 import { mintWithMetaplexJs } from "utils/metaplex";
 import { notify } from "utils/notifications";
+import ColorThief from "colorthief/dist/color-thief.mjs";
 
 const TOKEN_NAME = "Solana Workshop NFT";
 const TOKEN_SYMBOL = "SHOP";
@@ -20,7 +21,7 @@ export const NftMinter: FC = () => {
 
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
-
+  const [NFT, setNFT] = useState(null);
   const [mintAddress, setMintAddress] = useState(null);
   const [mintSignature, setMintSignature] = useState(null);
 
@@ -41,7 +42,59 @@ export const NftMinter: FC = () => {
     }
   };
 
+  const makeNFTfromImage = () => {
+    const colorThief = new ColorThief();
+
+    const imageElement = document.createElement("img");
+    imageElement.src = createObjectURL;
+
+    const palette = colorThief.getPalette(imageElement);
+
+    // Canvas 엘리먼트를 생성합니다.
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const width = 300;
+    const height = 600;
+
+    // 하얀색 배경 그리기
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, width, height);
+
+    // 상자 그리기
+    {
+      palette.map((color, idx) => {
+        ctx.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`; // 상자 색상
+        ctx.fillRect(idx * 50, 0, 10, 300); // 상자 위치 및 크기
+      });
+    }
+
+    // Canvas를 이미지로 변환
+    const image = document.createElement("img");
+    image.src = canvas.toDataURL(); // Canvas를 데이터 URL로 변환하여 이미지로 만듭니다.
+
+    // Canvas에서 데이터 URL을 추출합니다.
+    const dataUrl = canvas.toDataURL("image/jpeg"); // 이미지 형식에 따라 변경
+
+    // 데이터 URL을 Blob로 변환합니다.
+    const parts = dataUrl.split(";base64,");
+    const contentType = parts[0].split(":")[1];
+    const byteCharacters = atob(parts[1]);
+    const byteNumbers = new Array(byteCharacters.length);
+
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+
+    const byteArray = new Uint8Array(byteNumbers);
+    const blob = new Blob([byteArray], { type: contentType });
+
+    // Blob을 File 객체로 변환합니다.
+    const file = new File([blob], "nft.jpg", { type: "image/jpeg" });
+    setNFT(file);
+  };
+
   const onClickMintNft = useCallback(async () => {
+    console.log(NFT);
     if (!wallet.publicKey) {
       console.log("error", "Wallet not connected!");
       notify({
@@ -59,12 +112,12 @@ export const NftMinter: FC = () => {
       TOKEN_SYMBOL,
       TOKEN_DESCRIPTION,
       WORKSHOP_COLLECTION,
-      image
+      NFT
     ).then(([mintAddress, signature]) => {
       setMintAddress(mintAddress);
       setMintSignature(signature);
     });
-  }, [wallet, connection, networkConfiguration, image]);
+  }, [wallet, connection, networkConfiguration, NFT]);
 
   return (
     <div>
@@ -78,7 +131,15 @@ export const NftMinter: FC = () => {
             src={createObjectURL}
           />
         )}
-        {!mintAddress && !mintSignature && (
+        {NFT && (
+          <Image
+            alt="your NFT"
+            width="300"
+            height="300"
+            src={URL.createObjectURL(NFT)}
+          />
+        )}
+        {!mintAddress && !mintSignature && !createObjectURL && (
           <div className="mx-auto text-center mb-2">
             <input className="mx-auto" type="file" onChange={uploadImage} />
           </div>
@@ -88,14 +149,21 @@ export const NftMinter: FC = () => {
         <div className="relative group items-center">
           {createObjectURL && !mintAddress && !mintSignature && (
             <div>
-              <div
-                className="m-1 absolute -inset-0.5 bg-gradient-to-r from-orange-300 to-orange-500 
-                        rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
               <button
-                className="px-8 m-2 mt-4 w-40 h-14 btn animate-pulse bg-gradient-to-br from-orange-300 to-orange-500 hover:from-white hover:to-orange-300 text-black text-lg"
-                onClick={onClickMintNft}>
-                <span>Mint!</span>
+                className="px-8 m-2 mt-4 btn animate-pulse bg-gradient-to-br from-orange-300 to-orange-500 hover:from-white hover:to-orange-300 text-black text-lg"
+                onClick={!NFT ? makeNFTfromImage : onClickMintNft}>
+                <span>{!NFT ? "Make NFT from my image" : "Mint my NFT"}</span>
               </button>
+              <div>
+                <button
+                  onClick={() => {
+                    setCreateObjectURL(null);
+                    setImage(null);
+                    setNFT(null);
+                  }}>
+                  Retry
+                </button>
+              </div>
             </div>
           )}
 
