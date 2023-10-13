@@ -149,12 +149,8 @@ export const NftMinter: FC = () => {
 
   const onClickMintNft = useCallback(async () => {
     if (!wallet.publicKey) {
-      console.log("error", "Wallet not connected!");
-      notify({
-        type: "error",
-        message: "error",
-        description: "Wallet not connected!",
-      });
+      alert("You should connect your wallet first to mint NFT");
+      router.replace("/setting");
       return;
     }
     await mintWithMetaplexJs(
@@ -173,8 +169,8 @@ export const NftMinter: FC = () => {
   }, [wallet, connection, networkConfiguration, NFT]);
 
   return (
-    <div>
-      <div className="flex flex-col items-center gap-8 p-16">
+    <div className="p-16">
+      <div className="flex flex-col items-center gap-8 mb-16">
         {createObjectURL && (
           <Image
             alt="uploaded image"
@@ -193,8 +189,17 @@ export const NftMinter: FC = () => {
         )}
         {!mintAddress && !mintSignature && !createObjectURL && (
           <div className="mx-auto text-center mb-2">
-            <div className="text-xl mb-8">Upload your Plogging Proof Shot!</div>
-            <input className="mx-auto" type="file" onChange={uploadImage} />
+            <label htmlFor="input-file" className="btn text-xl mb-8">
+              Upload your Plogging Proof Shot!
+            </label>
+            <input
+              id="input-file"
+              className="mx-auto"
+              type="file"
+              onChange={uploadImage}
+              accept="image/*"
+              style={{ display: "none" }}
+            />
           </div>
         )}
       </div>
