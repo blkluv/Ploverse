@@ -28,11 +28,12 @@ const Home: NextPage = (props) => {
           <b>jogging</b> with <b>picking up litter</b> to keep our environment
           clean. <br /> Turn your plogging milestones into unique <b>NFT</b>{" "}
           treasures with our service! 🌱🏃‍♂️💎 <br />
-          Elevate your eco-friendly journey with 'Ploverse' where plogging meets
-          NFT creation, preserving the planet one step at a time!
+          Elevate your eco-friendly journey with{" "}
+          <b className="text-accent">Ploverse</b> where plogging meets NFT
+          creation, preserving the planet one step at a time!
         </h4>
         <Link href={"/create"}>
-          <button className="btn text-xl mt-8">Let's Plocka Upp !</button>
+          <button className="btn text-xl mt-8">Let&apos;s Plocka Upp !</button>
         </Link>
       </div>
     </div>
