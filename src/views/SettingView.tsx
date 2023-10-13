@@ -41,7 +41,7 @@ export const SettingView: FC = ({}) => {
       </h4>
       <div className="navbar flex h-20 flex-row md:mb-2 shadow-lg bg-black text-neutral-content border-b border-zinc-600 bg-opacity-66">
         <div className="navbar-start align-items-center">
-          <WalletMultiButtonDynamic className="btn-ghost btn-sm relative flex md:hidden text-lg " />
+          <WalletMultiButtonDynamic className="btn-ghost btn-sm relative flex text-lg" />
         </div>
         {wallet.connected && (
           <div className="">

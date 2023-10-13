@@ -6,6 +6,7 @@ import { FC, useCallback, useState } from "react";
 import { mintWithMetaplexJs } from "utils/metaplex";
 import { notify } from "utils/notifications";
 import ColorThief from "colorthief/dist/color-thief.mjs";
+import { useRouter } from "next/router";
 
 const TOKEN_NAME = "Solana Workshop NFT";
 const TOKEN_SYMBOL = "SHOP";
@@ -15,6 +16,7 @@ const WORKSHOP_COLLECTION = new PublicKey(
 );
 
 export const NftMinter: FC = () => {
+  const router = useRouter();
   const { connection } = useConnection();
   const { networkConfiguration } = useNetworkConfiguration();
   const wallet = useWallet();
@@ -67,7 +69,7 @@ export const NftMinter: FC = () => {
       function drawFlower(x, y, stem, petal, center) {
         // 꽃 줄기 그리기
         ctx.fillStyle = stem;
-        ctx.fillRect(x + 20, y - 50, 10, 100);
+        ctx.fillRect(x + 20, y - 20, 10, 100);
 
         // 꽃잎 그리기
         ctx.fillStyle = petal;
@@ -144,8 +146,8 @@ export const NftMinter: FC = () => {
       });
     }
   };
+
   const onClickMintNft = useCallback(async () => {
-    console.log(NFT);
     if (!wallet.publicKey) {
       console.log("error", "Wallet not connected!");
       notify({
@@ -172,7 +174,7 @@ export const NftMinter: FC = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-8 p-16">
         {createObjectURL && (
           <Image
             alt="uploaded image"
@@ -223,29 +225,29 @@ export const NftMinter: FC = () => {
 
           {mintAddress && mintSignature && (
             <div>
-              <h4 className="md:w-full text-2x1 md:text-4xl text-center text-slate-300 my-2">
-                <p>Mint successful!</p>
+              <h4 className="md:w-full text-center text-slate-300 my-2">
+                <p>
+                  Your <b>Plocka NFT</b> Minted !
+                </p>
                 <p className="text-xl mt-4 mb-2">
-                  Mint address:{" "}
                   <span className="font-bold text-lime-500">
                     <a
                       className="border-b-2 border-transparent hover:border-lime-500"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={`https://explorer.solana.com/address/${mintAddress}?cluster=${networkConfiguration}`}>
-                      {mintAddress}
+                      {"Go check out the Plocka NFT"}
                     </a>
                   </span>
                 </p>
                 <p className="text-xl">
-                  Tx signature:{" "}
                   <span className="font-bold text-amber-600">
                     <a
                       className="border-b-2 border-transparent hover:border-amber-600"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={`https://explorer.solana.com/tx/${mintSignature}?cluster=${networkConfiguration}`}>
-                      {mintSignature}
+                      {"Tx Signature"}
                     </a>
                   </span>
                 </p>
