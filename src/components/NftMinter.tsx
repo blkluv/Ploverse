@@ -43,17 +43,11 @@ export const NftMinter: FC = () => {
   };
 
   const drawNFTwithColor = (palette) => {
-    console.log(palette);
     // Canvas 엘리먼트를 생성합니다.
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
-    const width = 400;
-    const height = 400;
-
-    // 하얀색 배경 그리기
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, width, height);
-
+    canvas.width = 400;
+    canvas.height = 400;
     // 색상 넣기
     const colors = palette.map(
       (color) => `rgb(${color[0]}, ${color[1]}, ${color[2]})`
@@ -61,6 +55,51 @@ export const NftMinter: FC = () => {
 
     // 도안 그리기
     {
+      // 하늘 그리기
+      ctx.fillStyle = colors[0];
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // 풀 그리기
+      ctx.fillStyle = colors[1];
+      ctx.fillRect(0, 250, canvas.width, canvas.height - 250);
+
+      // 꽃 그리기
+      function drawFlower(x, y, stem, petal, center) {
+        // 꽃 줄기 그리기
+        ctx.fillStyle = stem;
+        ctx.fillRect(x + 20, y - 50, 10, 100);
+
+        // 꽃잎 그리기
+        ctx.fillStyle = petal;
+        ctx.beginPath();
+        ctx.arc(x + 20, y - 40, 15, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(x + 20, y - 60, 15, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(x + 30, y - 50, 15, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(x + 10, y - 50, 15, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 꽃 중심 그리기
+        ctx.fillStyle = center;
+        ctx.beginPath();
+        ctx.arc(x + 20, y - 50, 10, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // 꽃 그리기
+      drawFlower(50, 250, colors[9], colors[1], colors[0]);
+      drawFlower(150, 270, colors[8], colors[2], colors[1]);
+      drawFlower(250, 250, colors[7], colors[4], colors[2]);
+      drawFlower(100, 300, colors[6], colors[6], colors[3]);
+      drawFlower(200, 300, colors[5], colors[8], colors[4]);
     }
 
     // Canvas를 이미지로 변환
