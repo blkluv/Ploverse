@@ -1,18 +1,10 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 const Home: NextPage = (props) => {
   return (
     <div>
-      <Head>
-        <title>Ploverse</title>
-        <meta
-          name="description"
-          content="Leave a Footprint in the Blockchain Universe with Plogging Service"
-        />
-      </Head>
       <div className="flex flex-col justify-center items-center gap-8 px-4 py-16">
         <h1 className="text-7xl">
           <span className="text-accent">PLO</span>gging

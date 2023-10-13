@@ -12,9 +12,12 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>NFT Minter</title>
+        <title>Ploverse</title>
+        <meta
+          name="description"
+          content="Leave a Footprint in the Blockchain Universe with Plogging Service"
+        />
       </Head>
-
       <ContextProvider>
         <div className="flex flex-col h-screen">
           <Notifications />
