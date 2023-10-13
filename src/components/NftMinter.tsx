@@ -42,33 +42,26 @@ export const NftMinter: FC = () => {
     }
   };
 
-  const makeNFTfromImage = () => {
-    const colorThief = new ColorThief();
-
-    const imageElement = document.createElement("img");
-    imageElement.src = createObjectURL;
-    imageElement.crossOrigin = "anonymous";
-    imageElement.setAttribute("crossOrigin", "");
-
-    const palette = colorThief.getPalette(imageElement);
-
+  const drawNFTwithColor = (palette) => {
+    console.log(palette);
     // Canvas 엘리먼트를 생성합니다.
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
-    const width = 300;
-    const height = 300;
+    const width = 400;
+    const height = 400;
 
     // 하얀색 배경 그리기
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, width, height);
 
-    // 상자 그리기
-    // {
-    //   palette.map((color, idx) => {
-    //     ctx.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`; // 상자 색상
-    //     ctx.fillRect(idx * 50, 0, 10, 300); // 상자 위치 및 크기
-    //   });
-    // }
+    // 색상 넣기
+    const colors = palette.map(
+      (color) => `rgb(${color[0]}, ${color[1]}, ${color[2]})`
+    );
+
+    // 도안 그리기
+    {
+    }
 
     // Canvas를 이미지로 변환
     const image = document.createElement("img");
@@ -95,6 +88,23 @@ export const NftMinter: FC = () => {
     setNFT(file);
   };
 
+  const makeNFTfromImage = () => {
+    const colorThief = new ColorThief();
+
+    const imageElement = document.createElement("img");
+    imageElement.src = createObjectURL;
+    imageElement.crossOrigin = "Anonymous";
+
+    if (imageElement.complete) {
+      const palette = colorThief.getPalette(imageElement, [0, 10, 10]);
+      drawNFTwithColor(palette);
+    } else {
+      imageElement.addEventListener("load", function () {
+        const palette = colorThief.getPalette(imageElement, [0, 10, 10]);
+        drawNFTwithColor(palette);
+      });
+    }
+  };
   const onClickMintNft = useCallback(async () => {
     console.log(NFT);
     if (!wallet.publicKey) {
@@ -152,7 +162,7 @@ export const NftMinter: FC = () => {
           {createObjectURL && !mintAddress && !mintSignature && (
             <div className="flex flex-col items-center gap-8">
               <button
-                className="px-8 m-2 mt-4 btn animate-pulse bg-gradient-to-br from-accent to-primary hover:from-white hover:to-orange-300 text-black text-lg"
+                className="px-8 m-2 mt-4 btn animate-pulse bg-gradient-to-br from-accent to-primary hover:from-white hover:to-accent text-black text-lg"
                 onClick={!NFT ? makeNFTfromImage : onClickMintNft}>
                 <span>
                   {!NFT ? "Make Plocka from image" : "Mint Plocka NFT"}
