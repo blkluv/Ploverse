@@ -47,6 +47,8 @@ export const NftMinter: FC = () => {
 
     const imageElement = document.createElement("img");
     imageElement.src = createObjectURL;
+    imageElement.crossOrigin = "anonymous";
+    imageElement.setAttribute("crossOrigin", "");
 
     const palette = colorThief.getPalette(imageElement);
 
@@ -54,19 +56,19 @@ export const NftMinter: FC = () => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     const width = 300;
-    const height = 600;
+    const height = 300;
 
     // 하얀색 배경 그리기
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, width, height);
 
     // 상자 그리기
-    {
-      palette.map((color, idx) => {
-        ctx.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`; // 상자 색상
-        ctx.fillRect(idx * 50, 0, 10, 300); // 상자 위치 및 크기
-      });
-    }
+    // {
+    //   palette.map((color, idx) => {
+    //     ctx.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`; // 상자 색상
+    //     ctx.fillRect(idx * 50, 0, 10, 300); // 상자 위치 및 크기
+    //   });
+    // }
 
     // Canvas를 이미지로 변환
     const image = document.createElement("img");
@@ -121,11 +123,10 @@ export const NftMinter: FC = () => {
 
   return (
     <div>
-      <div className="mx-auto flex flex-col">
+      <div className="flex flex-col items-center gap-8">
         {createObjectURL && (
           <Image
-            className="mx-auto mb-4"
-            alt="uploadedImage"
+            alt="uploaded image"
             width="300"
             height="300"
             src={createObjectURL}
@@ -133,7 +134,7 @@ export const NftMinter: FC = () => {
         )}
         {NFT && (
           <Image
-            alt="your NFT"
+            alt="your Plocka"
             width="300"
             height="300"
             src={URL.createObjectURL(NFT)}
@@ -141,6 +142,7 @@ export const NftMinter: FC = () => {
         )}
         {!mintAddress && !mintSignature && !createObjectURL && (
           <div className="mx-auto text-center mb-2">
+            <div className="text-xl mb-8">Upload your Plogging Proof Shot!</div>
             <input className="mx-auto" type="file" onChange={uploadImage} />
           </div>
         )}
@@ -148,14 +150,17 @@ export const NftMinter: FC = () => {
       <div className="flex flex-row justify-center">
         <div className="relative group items-center">
           {createObjectURL && !mintAddress && !mintSignature && (
-            <div>
+            <div className="flex flex-col items-center gap-8">
               <button
-                className="px-8 m-2 mt-4 btn animate-pulse bg-gradient-to-br from-orange-300 to-orange-500 hover:from-white hover:to-orange-300 text-black text-lg"
+                className="px-8 m-2 mt-4 btn animate-pulse bg-gradient-to-br from-accent to-primary hover:from-white hover:to-orange-300 text-black text-lg"
                 onClick={!NFT ? makeNFTfromImage : onClickMintNft}>
-                <span>{!NFT ? "Make NFT from my image" : "Mint my NFT"}</span>
+                <span>
+                  {!NFT ? "Make Plocka from image" : "Mint Plocka NFT"}
+                </span>
               </button>
               <div>
                 <button
+                  className="btn"
                   onClick={() => {
                     setCreateObjectURL(null);
                     setImage(null);
