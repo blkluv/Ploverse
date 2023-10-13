@@ -1,9 +1,9 @@
-import { SettingView } from "views/SettingView";
+import { NftMinter } from "components/NftMinter";
 
 export default function Setting() {
   return (
     <div>
-      <SettingView />
+      <NftMinter />
     </div>
   );
 }
