@@ -1,18 +1,15 @@
-# Ploverse 
-: PLOgging uniVERSE
-
+# Ploverse : Plogging Universe
 Leave a Footprint in the Blockchain Universe with Plogging
 
-- Plogging is an eco-friendly activity that combines jogging with picking up litter to keep our environment clean.
-- Turn your plogging milestones into unique NFT treasures with our service! 🌱🏃‍♂️💎
-- Elevate your eco-friendly journey with Ploverse where plogging meets NFT creation, preserving the planet one step at a time!
-
-<img width="1392" alt="스크린샷 2023-10-13 오후 4 25 41" src="https://github.com/seondal/Ploverse/assets/75469131/2ef9139b-38be-4608-9faa-31972d41d624">
+![Feature](https://github.com/seondal/Ploverse/assets/75469131/aa81d6f4-435b-48b7-9997-06e2036537aa)
 
 <br/>
 
 ## Demo
+
 [Video](http://youtube.com/watch?si=0gmyjanJJatw9ueo&v=DRmLOU1oxBg&feature=youtu.be)
+
+<img width="1392" alt="스크린샷 2023-10-13 오후 4 25 41" src="https://github.com/seondal/Ploverse/assets/75469131/2ef9139b-38be-4608-9faa-31972d41d624">
 
 <br/>
 
