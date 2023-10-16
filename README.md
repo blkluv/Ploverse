@@ -2,6 +2,8 @@
 
 ![Feature](https://github.com/seondal/Ploverse/assets/75469131/aa81d6f4-435b-48b7-9997-06e2036537aa)
 
+> Solana Hackathon Hyperdrive
+
 <br/>
 
 # Project Background
@@ -17,18 +19,14 @@ Solana is building a better, more energy-efficient Web3,
 climate-focused ecosystem
 
 ### Gamification
-High TPS: reached 50000 TPS in testnet
-= Good for achievement, reward
+- High TPS: reached 50000 TPS in testnet = Good for achievement, reward
+- High Daily Active Users, Transactions, Stablecoin Volume = Good for competition, relationship
 
-High Daily Active Users, Transactions, Stablecoin Volume
-= Good for competition, relationship
+Solana has reached the fourth stage of motivation in gamification, which provides users with fun and rewards.
 
-Solana has reached the fourth stage of motivation
-in gamification, which provides users with fun and rewards.
-
-→ Many countries and companies are adopting eco-friendly elements, such as carbon neutrality and the development of eco-friendly products
-→ Users interested in the rewards are motivated to take actions to gain rewards
-→ Users who are environmentally conscious practice a healthy and eco-friendly lifestyle
+- Many countries and companies are adopting eco-friendly elements, such as carbon neutrality and the development of eco-friendly products
+- Users interested in the rewards are motivated to take actions to gain rewards
+- Users who are environmentally conscious practice a healthy and eco-friendly lifestyle
 
 For previous reasons and for these reasons,
 we decided to devolop the 'Ploverse' platform in Solana
@@ -39,8 +37,10 @@ we decided to devolop the 'Ploverse' platform in Solana
 
 Exercise trackers can monitor indicators during workouts, such as consumed calories.
 But they fail to provide enough rewards when users reached a goal.
+
 Plogging contributes to the reduction of environmental pollution, but frequently, the photographic evidence goes unnoticed. This underscores the necessity for increased motivation to inspire a greater number of individuals to initiate and maintain plogging activities. 
 Furthermore, given that plogging demands ongoing effort, user motivation might diminish if the rewards are inadequate. Therefore, we have integrated an NFT system with plogging to address these issues.
+
 So we combined plogging with an NFT system. More solution is in the next page.
 
 ### Rewards
@@ -68,7 +68,6 @@ We generate unique NFTs by analyzing the dominant colors in photos uploaded by u
 
 The process of transforming plogging certification photos into NFTs inspired by the natural environment symbolizes the positive impact of collecting litter during plogging on the beauty of the natural surroundings.
 Plogging certification photos typically capture images of trash and waste, which might discourage users from sharing them on their social media profiles. However, by transforming these images into visually appealing designs, users can still validate and showcase their plogging efforts on social platforms with aesthetically pleasing content.
-We have plans to implement a feature on this page that will allow users to gather their own Plocka NFTs, as well as NFTs created by others. Furthermore, users will have the capability to both buy and sell these NFTs.
 
 ### Plocka Gallery
 
@@ -86,17 +85,22 @@ We have plans to implement a feature on this page that will allow users to gathe
 
 # Buisiness Model
 
-#### Target Customers
+### Target Customers
 Individuals interested in the environment and exercise (walking, jogging).
 
 ### Key Values
 
-- **Sustainability** : Environmental Awareness Campaign and Fitness Trends → Heightened awareness of eco-friendliness influences other behaviors.
-- **Competitive** : Addresses both the eco and fitness markets. Offers flexibility by facilitating not only in-app user consumption but also intermediation between users and other apps.
-- **Users** : Empowers users to be agents of eco-friendly actions, bringing them closer to environmental protection and improvement.
+- **Sustainability**
+  : Environmental Awareness Campaign and Fitness Trends → Heightened awareness of eco-friendliness influences other behaviors.
+- **Competitive**
+  : Addresses both the eco and fitness markets. Offers flexibility by facilitating not only in-app user consumption but also intermediation between users and other apps.
+- **Users**
+  : Empowers users to be agents of eco-friendly actions, bringing them closer to environmental protection and improvement.
  For user sustainability, issues NFTs upon achieving specific goals (Solana transactions have a low environmental impact).
-- **Advertising** (Advertisers, Sponsors) : NFT web3 ads, various tour advertisements. User clicks to navigate to the advertiser's page after viewing an ad.
-- **Mediation** : Connected with exercise or environmental-related newsletters,  fees within the community.
+- **Advertising** (Advertisers, Sponsors)
+  : NFT web3 ads, various tour advertisements. User clicks to navigate to the advertiser's page after viewing an ad.
+- **Mediation**
+  : Connected with exercise or environmental-related newsletters,  fees within the community.
 
 <br/>
 
