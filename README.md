@@ -138,6 +138,5 @@ We intend to present the prototype with the following additional features:
 <br/>
 
 # Ref
-> This is submit for **Hyperdrive : Solana Hackathon (2023)**
 - scaffold : https://github.com/solana-labs/dapp-scaffold
 - solana workshops : https://github.com/Solana-Workshops/NFT-Minter
