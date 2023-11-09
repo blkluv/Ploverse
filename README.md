@@ -2,8 +2,6 @@
 
 ![Feature](https://github.com/seondal/Ploverse/assets/75469131/aa81d6f4-435b-48b7-9997-06e2036537aa)
 
-> Solana Hackathon Hyperdrive
-
 <br/>
 
 # Project Background
