@@ -190,7 +190,7 @@ export const NftMinter: FC = () => {
         {!mintAddress && !mintSignature && !createObjectURL && (
           <div className="mx-auto text-center mb-2">
             <label htmlFor="input-file" className="btn text-xl mb-8">
-              Upload your Plogging Proof Shot!
+              Upload your Jogig Proof Shot!
             </label>
             <input
               id="input-file"

@@ -12,10 +12,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>Ploverse</title>
+        <title>joGIG</title>
         <meta
           name="description"
-          content="Leave a Footprint in the Blockchain Universe with Plogging Service"
+          content="Leave a Footprint in the Blockchain Universe with Jogig Service"
         />
       </Head>
       <ContextProvider>

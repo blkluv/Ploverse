@@ -1,4 +1,4 @@
-# Plogging Universe
+# Jogig Universe
 
 > Solana 2023 Hackathon : Hyperdrive
 > 
@@ -41,23 +41,23 @@ we decided to devolop the 'Ploverse' platform in Solana
 Exercise trackers can monitor indicators during workouts, such as consumed calories.
 But they fail to provide enough rewards when users reached a goal.
 
-Plogging contributes to the reduction of environmental pollution, but frequently, the photographic evidence goes unnoticed. This underscores the necessity for increased motivation to inspire a greater number of individuals to initiate and maintain plogging activities. 
-Furthermore, given that plogging demands ongoing effort, user motivation might diminish if the rewards are inadequate. Therefore, we have integrated an NFT system with plogging to address these issues.
+Jogig contributes to the reduction of environmental pollution, but frequently, the photographic evidence goes unnoticed. This underscores the necessity for increased motivation to inspire a greater number of individuals to initiate and maintain Jogig activities. 
+Furthermore, given that Jogig demands ongoing effort, user motivation might diminish if the rewards are inadequate. Therefore, we have integrated an NFT system with Jogig to address these issues.
 
-So we combined plogging with an NFT system. More solution is in the next page.
+So we combined Jogig with an NFT system. More solution is in the next page.
 
 ### Rewards
-When users upload a plogging photo, a unique NFT token is generated based on that photo. 
-This official certification of a user's plogging experience, along with the associated rewards, adds an element of fun and motivation, making plogging feel like a game.
+When users upload a Jogig photo, a unique NFT token is generated based on that photo. 
+This official certification of a user's Jogig experience, along with the associated rewards, adds an element of fun and motivation, making Jogig feel like a game.
 
 ### Sustainability
-Every time a user contributes to environmental protection, whether through the amount of trash collected or their consistent participation, their NFT reflects their level of contribution. The clear goals and rewards associated with plogging enhance goal awareness and personal fulfillment.
+Every time a user contributes to environmental protection, whether through the amount of trash collected or their consistent participation, their NFT reflects their level of contribution. The clear goals and rewards associated with Jogig enhance goal awareness and personal fulfillment.
 
 ### Life-friendly
-Plogging promotes a healthy and eco-friendly lifestyle that can be practiced anywhere and at any time, even while traveling. Additionally, it allows for aerobic and easy exercises during the plogging activity.
+Jogig promotes a healthy and eco-friendly lifestyle that can be practiced anywhere and at any time, even while traveling. Additionally, it allows for aerobic and easy exercises during the Jogig activity.
 
 ### Incentives
-NFTs earned through plogging have inherent value. Users can benefit from transactions with other users and have the option to donate their NFTs to environmental protection projects.
+NFTs earned through Jogig have inherent value. Users can benefit from transactions with other users and have the option to donate their NFTs to environmental protection projects.
 
 <br/>
 
@@ -69,8 +69,8 @@ We generate unique NFTs by analyzing the dominant colors in photos uploaded by u
 
 ![image](https://github.com/seondal/Ploverse/assets/75469131/1e5e279a-0c62-4019-a6b2-79cedb253a91)
 
-The process of transforming plogging certification photos into NFTs inspired by the natural environment symbolizes the positive impact of collecting litter during plogging on the beauty of the natural surroundings.
-Plogging certification photos typically capture images of trash and waste, which might discourage users from sharing them on their social media profiles. However, by transforming these images into visually appealing designs, users can still validate and showcase their plogging efforts on social platforms with aesthetically pleasing content.
+The process of transforming Jogig certification photos into NFTs inspired by the natural environment symbolizes the positive impact of collecting litter during Jogig on the beauty of the natural surroundings.
+Jogig certification photos typically capture images of trash and waste, which might discourage users from sharing them on their social media profiles. However, by transforming these images into visually appealing designs, users can still validate and showcase their Jogig efforts on social platforms with aesthetically pleasing content.
 
 ### Plocka Gallery
 
@@ -81,7 +81,7 @@ Additionally, you can easily share and post your NFTs on social media.
 
 ![image](https://github.com/seondal/Ploverse/assets/75469131/39d11988-a939-4ebe-8bf2-9e59ba7e9a33)
 
-Moreover, you will have the capability to both purchase and sell these NFTs. This creates a community of people who certify their plogging achievements and can connect to exchange information about their plogging experiences.
+Moreover, you will have the capability to both purchase and sell these NFTs. This creates a community of people who certify their Jogig achievements and can connect to exchange information about their Jogig experiences.
 We have plans to implement a feature on this page that will allow users to gather their own Plocka NFTs, as well as NFTs created by others. Furthermore, users will have the capability to both buy and sell these NFTs.
 
 <Br/>
@@ -103,7 +103,7 @@ Individuals interested in the environment and exercise (walking, jogging).
 - **Advertising** (Advertisers, Sponsors)
   : NFT web3 ads, various tour advertisements. User clicks to navigate to the advertiser's page after viewing an ad.
 - **Mediation**
-  : Connected with exercise or environmental-related newsletters,  fees within the community.
+  : Connected with exercise or environmental-related newsletters, fees within the community.
 
 <br/>
 
@@ -117,7 +117,7 @@ The demo version we've developed so far is accessible through the following link
 We intend to present the prototype with the following additional features:
 
 - **Plocka Gallery Page** : We are planning to introduce a feature on this page that will enable users to collect their own Plocka NFTs, as well as NFTs created by others. Additionally, users will have the ability to both purchase and sell these NFTs.
-- **Adding Designs** : In the current demo version, only a simple flower illustration is available. However, in future updates, we are planning to incorporate a variety of exquisite designs. This way, users' plogging certification photos can be transformed into even more aesthetically pleasing NFTs.
+- **Adding Designs** : In the current demo version, only a simple flower illustration is available. However, in future updates, we are planning to incorporate a variety of exquisite designs. This way, users' Jogig certification photos can be transformed into even more aesthetically pleasing NFTs.
 
 ### Release
 - Add community
