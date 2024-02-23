@@ -211,7 +211,7 @@ export const NftMinter: FC = () => {
                 className="px-8 m-2 mt-4 btn animate-pulse bg-gradient-to-br from-accent to-primary hover:from-white hover:to-accent text-black text-lg"
                 onClick={!NFT ? makeNFTfromImage : onClickMintNft}>
                 <span>
-                  {!NFT ? "Make Plocka from image" : "Mint Plocka NFT"}
+                  {!NFT ? "Create Jogig from image" : "Mint Jogig NFT"}
                 </span>
               </button>
               <div>
