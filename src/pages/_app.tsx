@@ -14,8 +14,8 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <title>joGIG</title>
         <meta
-          name="description"
-          content="Leave a Footprint in the Blockchain Universe with Jogig Service"
+          name="joGIG"
+          content="Earn money jogging and picking up litter"
         />
       </Head>
       <ContextProvider>
