@@ -7,8 +7,8 @@ const Home: NextPage = (props) => {
     <div>
       <div className="flex flex-col justify-center items-center gap-8 p-8">
         <h1 className="text-7xl">
-          jo<span className="text-accent">GIG</span><br />
-          <span className="text-accent">ECO</span>nomy
+          <center>jo<span className="text-accent">GIG</span></center><br />
+          <center><span className="text-accent">ECO</span>nomy</center>
         </h1>
         <h3 className="text-xs">
           Get paid for jogiging and cleaning your city in the new Jogig <span className="text-accent">Eco</span>nomy.🏃‍♂️💰🏙️
